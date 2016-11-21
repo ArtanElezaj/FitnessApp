@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="artan.fitnessapp">
+
+    <uses-feature
+        android:name="@string/step_detector"
+        android:required="false" />
+    <uses-feature
+        android:name="@string/step_counter"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:name="artan.fitnessapp.ConfigRealm"
+        android:allowBackup="true"
+        android:icon="@mipmap/run"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="artan.fitnessapp.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="artan.fitnessapp.Steps"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="artan.fitnessapp.StartWalking"></activity>
+
+        <receiver android:name="artan.fitnessapp.notification.NotificationBroadcaster" />
+    </application>
+
+</manifest>

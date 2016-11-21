@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="artan.fitnessapp.StartWalking"
+            android:padding="40dp"
+            >
+
+
+            <TextView
+                android:text="Fitness App"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/colorWhite"/>
+
+<ImageView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@mipmap/run"
+    android:layout_gravity="center"
+    android:layout_marginBottom="30dp"/>
+
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textColorHint="@color/colorWhite"
+                android:textCursorDrawable="@color/colorWhite"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint = "@color/colorWhite"
+                />
+
+
+            <EditText
+                android:id="@+id/et_password"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Password"
+                android:textCursorDrawable="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint = "@color/colorWhite"/>
+
+
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:text="log in"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/btn_add_color"
+                    android:background="@drawable/btn_style"
+                    android:layout_marginBottom="10dp"/>
+                <Button
+                    android:id="@+id/btn_sign_up"
+                    android:text="Sign Up"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/btn_add_color"
+                    android:background="@drawable/btn_style"
+                    />
+
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:text=""
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="200dp"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>
+
