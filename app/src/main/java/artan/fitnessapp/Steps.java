@@ -26,9 +26,9 @@ public class Steps extends Activity implements SensorEventListener {
     String mUserName = "";
 
     private TextView mTvShowSteps, mTvShowDistance;
-    private SensorManager mSensorManager ;
-    private Sensor mStepCounterSensor ;
-    private Sensor mStepDetectorSensor ;
+    private SensorManager mSensorManager;
+    private Sensor mStepCounterSensor;
+    private Sensor mStepDetectorSensor;
 
     private int stepsInSensor = 0;
     private int stepsAtReset;
@@ -42,18 +42,17 @@ public class Steps extends Activity implements SensorEventListener {
     RealmResults<UserDetails> results;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepping);
 
-        mTvShowSteps = (TextView) findViewById(R.id.textview) ;
-        mTvShowDistance = (TextView) findViewById(R.id.textView1) ;
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE) ;
-        mStepCounterSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) ;
-        mStepDetectorSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) ;
-        mBtnReset = (Button)findViewById(R.id.btn_reset);
-        mBtnSave = (Button)findViewById(R.id.btn_save);
+        mTvShowSteps = (TextView) findViewById(R.id.textview);
+        mTvShowDistance = (TextView) findViewById(R.id.textView1);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mStepCounterSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        mStepDetectorSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+        mBtnReset = (Button) findViewById(R.id.btn_reset);
+        mBtnSave = (Button) findViewById(R.id.btn_save);
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
         stepsAtReset = sharedPreferences.getInt("stepsAtReset", 0);
         distanceAtReset = sharedPreferences.getInt("distanceAtReset", 0);
@@ -81,8 +80,8 @@ public class Steps extends Activity implements SensorEventListener {
     }
 
 
-    private void initBackgroundImage(){
-        ImageView background = (ImageView)findViewById(R.id.iv_background);
+    private void initBackgroundImage() {
+        ImageView background = (ImageView) findViewById(R.id.iv_background);
         Glide.with(this)
                 .load(R.drawable.background)
                 .centerCrop()
@@ -90,39 +89,38 @@ public class Steps extends Activity implements SensorEventListener {
     }
 
     @Override
-    public void onSensorChanged(SensorEvent event){
-        if(activityRunning){
+    public void onSensorChanged(SensorEvent event) {
+        if (activityRunning) {
             stepsInSensor = Math.round(event.values[0]);
-            distanceInSensor =  (int)(stepsInSensor * 2.5);
+            distanceInSensor = (int) (stepsInSensor * 2.5);
             int stepsSinceReset = stepsInSensor - stepsAtReset;
             int distanceSinceReset = distanceInSensor - distanceAtReset;
             mTvShowSteps.setText(String.valueOf(stepsSinceReset));
             mTvShowDistance.setText(String.valueOf(distanceSinceReset));
 
-            if (distanceSinceReset != 0 && distanceSinceReset % 1000 == 0){
-                Toast.makeText(this, "Congrats, you achieved "+distanceSinceReset+" feet! Keep it going...", Toast.LENGTH_LONG).show();
+            if (distanceSinceReset != 0 && distanceSinceReset % 1000 == 0) {
+                Toast.makeText(this, "Congrats, you achieved " + distanceSinceReset + " feet! Keep it going...", Toast.LENGTH_LONG).show();
             }
 
-        }else{
+        } else {
             event.values[0] = 0;
         }
 
     }
+
     @Override
     public void onStart() {
         super.onStart();
         activityRunning = true;
     }
 
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, mStepCounterSensor, SensorManager.SENSOR_DELAY_FASTEST) ;
-        mSensorManager.registerListener(this, mStepDetectorSensor, SensorManager.SENSOR_DELAY_FASTEST) ;
+        mSensorManager.registerListener(this, mStepCounterSensor, SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.registerListener(this, mStepDetectorSensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
-    protected void onStop()
-    {
+    protected void onStop() {
         super.onStop();
         reset();
         activityRunning = false;
@@ -152,7 +150,7 @@ public class Steps extends Activity implements SensorEventListener {
 
     public void save() {
 
-        int steps = Integer.parseInt( mTvShowSteps.getText().toString());
+        int steps = Integer.parseInt(mTvShowSteps.getText().toString());
         int distance = Integer.parseInt(mTvShowDistance.getText().toString());
         long timeNow = System.currentTimeMillis();
 

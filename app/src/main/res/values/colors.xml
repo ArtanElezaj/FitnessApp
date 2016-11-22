@@ -9,4 +9,5 @@
     <color name="darkblue">#241543</color>
     <color name="bg_drop_row_light">#4A8E79BB</color>
     <color name="bg_drop_row_dark">#BD8E79BB</color>
+    <color name="temporaryBackground">#634899</color>
 </resources>

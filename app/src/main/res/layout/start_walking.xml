@@ -16,7 +16,8 @@
     android:layout_height="match_parent"
     tools:context="artan.fitnessapp.StartWalking"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@color/temporaryBackground">
 
 
 
@@ -42,8 +43,18 @@
         android:background="@drawable/btn_style"
         />
 
-    <TextView
+    <Switch
+        android:id="@+id/sw_reminder"
         android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reminder On"
+        android:textColor="@color/colorWhite"
+        android:checked="true"
+        />
+
+    <TextView
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,6 +94,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical" />
+
+
 
 </LinearLayout>
 </FrameLayout>

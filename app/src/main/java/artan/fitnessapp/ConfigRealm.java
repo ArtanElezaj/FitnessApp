@@ -8,7 +8,7 @@ import io.realm.RealmConfiguration;
 /**
  * This class is only for Realm Database configuration
  */
-public class ConfigRealm extends Application{
+public class ConfigRealm extends Application {
 
     @Override
     public void onCreate() {
