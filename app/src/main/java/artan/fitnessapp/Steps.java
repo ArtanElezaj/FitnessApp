@@ -46,6 +46,7 @@ public class Steps extends Activity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stepping);
 
+        initBackgroundImage();
         mTvShowSteps = (TextView) findViewById(R.id.textview);
         mTvShowDistance = (TextView) findViewById(R.id.textView1);
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -76,12 +77,12 @@ public class Steps extends Activity implements SensorEventListener {
                 reset();
             }
         });
-        initBackgroundImage();
+
     }
 
 
     private void initBackgroundImage() {
-        ImageView background = (ImageView) findViewById(R.id.iv_background);
+        ImageView background = (ImageView) findViewById(R.id.iv_background3);
         Glide.with(this)
                 .load(R.drawable.background)
                 .centerCrop()
@@ -118,6 +119,7 @@ public class Steps extends Activity implements SensorEventListener {
         super.onResume();
         mSensorManager.registerListener(this, mStepCounterSensor, SensorManager.SENSOR_DELAY_FASTEST);
         mSensorManager.registerListener(this, mStepDetectorSensor, SensorManager.SENSOR_DELAY_FASTEST);
+
     }
 
     protected void onStop() {

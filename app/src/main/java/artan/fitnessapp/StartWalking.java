@@ -43,6 +43,7 @@ public class StartWalking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_walking);
+        initBackgroundImage();
 
         steps = (Button) findViewById(R.id.ibSteps);
         mTvWelcome = (TextView) findViewById(R.id.tv_welcome);
@@ -83,13 +84,13 @@ public class StartWalking extends AppCompatActivity {
                 }
             }
         });
-        initBackgroundImage();
+
         scheduleNotification();
 
     }
 
     private void initBackgroundImage() {
-        ImageView background = (ImageView) findViewById(R.id.iv_background);
+        ImageView background = (ImageView) findViewById(R.id.iv_background2);
         Glide.with(this)
                 .load(R.drawable.background)
                 .centerCrop()

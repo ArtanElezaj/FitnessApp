@@ -19,7 +19,7 @@ import io.realm.RealmResults;
 public class StatisticsAdapter extends RecyclerView.Adapter<Holder> {
     private LayoutInflater mInflater;
 
-    RealmResults<UserDetails> mResult;
+    private RealmResults<UserDetails> mResult;
 
     public static ArrayList<String> generateItems() {
 
@@ -42,10 +42,8 @@ public class StatisticsAdapter extends RecyclerView.Adapter<Holder> {
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.single_item_rv, parent, false);
-        Holder holder = new Holder(view);
 
-
-        return holder;
+        return new Holder(view);
     }
 
     @Override

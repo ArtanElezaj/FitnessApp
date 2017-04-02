@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                         .findAll();
                 int exist = resultsTwoUser.size();
 
-
                 if (exist == 1) {
                     Intent intent = new Intent(MainActivity.this, StartWalking.class);
                     intent.putExtra("UsernameEntered", mEtUsername.getText().toString());

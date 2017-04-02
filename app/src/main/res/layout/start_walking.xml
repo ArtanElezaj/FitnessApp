@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/iv_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="artan.fitnessapp.StartWalking"
-    android:orientation="vertical"
-    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/temporaryBackground">
 
-
-
-    <TextView
-        android:id="@+id/tv_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Welcome"
-        android:textSize="20sp"
-        android:textColor="@color/colorWhite"/>
-
-    <Button
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Start walking"
-        android:id="@+id/ibSteps"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-thin"
-        android:textColor="@color/btn_add_color"
-        android:background="@drawable/btn_style"
-        />
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_background2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
-    <Switch
-        android:id="@+id/sw_reminder"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reminder On"
-        android:textColor="@color/colorWhite"
-        android:checked="true"
-        />
-
-    <TextView
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your saved results:"
-        android:textSize="17sp"
-        android:textColor="@color/colorWhite"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp">
-    <TextView
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Steps"
-        android:textColor="@color/colorWhite"/>
-    <TextView
-        android:layout_weight="3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Distance"
-        android:textColor="@color/colorWhite"/>
-    <TextView
-        android:layout_weight="2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        android:textColor="@color/colorWhite"/>
-    </LinearLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="10dp"
-        android:id="@+id/rv_saved_results"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:context="artan.fitnessapp.StartWalking">
 
 
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/ibSteps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_style"
+                android:fontFamily="sans-serif-thin"
+                android:text="Start walking"
+                android:textColor="@color/btn_add_color" />
+
+            <Switch
+                android:id="@+id/sw_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="true"
+                android:text="Reminder On"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="7dp"
+                android:text="Your saved results:"
+                android:textColor="@color/colorWhite"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Steps"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Distance"
+                    android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Time"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_saved_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="vertical" />
+
+
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>
-</FrameLayout>

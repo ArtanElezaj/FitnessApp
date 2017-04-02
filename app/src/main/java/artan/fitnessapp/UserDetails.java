@@ -7,7 +7,9 @@ import io.realm.annotations.PrimaryKey;
  * This class we used to create an RealmObject for all users's details(such as steps and distance), so we can add in our Realm database
  */
 public class UserDetails extends RealmObject {
-    public UserDetails(String name, int steps, int distanceFeet, long timeAdded) {
+
+
+    UserDetails(String name, int steps, int distanceFeet, long timeAdded) {
         this.name = name;
         this.steps = steps;
         this.distanceFeet = distanceFeet;

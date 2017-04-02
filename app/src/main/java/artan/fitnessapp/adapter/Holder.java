@@ -7,10 +7,10 @@ import android.widget.TextView;
 import artan.fitnessapp.R;
 
 
-public class Holder extends RecyclerView.ViewHolder {
+class Holder extends RecyclerView.ViewHolder {
     TextView mTvSteps, mTvDistance, mTvTime;
 
-    public Holder(View itemView) {
+    Holder(View itemView) {
         super(itemView);
 
         mTvSteps = (TextView) itemView.findViewById(R.id.tv_steps);
