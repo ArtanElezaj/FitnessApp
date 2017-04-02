@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         initBackgroundImage();
-
     }
 
     //this is the background image inserted programmatically.We did in this way because the image was to big and it shows an error if we do in xml.
